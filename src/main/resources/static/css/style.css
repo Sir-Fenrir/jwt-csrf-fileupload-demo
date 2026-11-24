@@ -1,0 +1,81 @@
+/* Nothing in here affects the JWT/CSRF/upload logic, just enough styling to keep the demo
+   readable. Feel free to ignore this file while studying the security side of the project. */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    max-width: 640px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    color: #1a1a1a;
+    background: #fafafa;
+}
+
+header {
+    margin-bottom: 1.5rem;
+}
+
+#session-status {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 320px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+}
+
+input {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.hint {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.error {
+    color: #b00020;
+}
+
+#file-list {
+    padding-left: 1.2rem;
+}
+
+#file-list li {
+    margin-bottom: 0.4rem;
+}

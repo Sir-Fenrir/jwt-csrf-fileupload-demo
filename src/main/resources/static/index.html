@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JWT + CSRF + File Upload Demo</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>JWT + CSRF + File Upload Demo</h1>
+            <!-- app.js fills this in once it knows whether we're logged in. -->
+            <div id="session-status">Checking session...</div>
+        </header>
+        <main>
+            <!-- Shown to a logged-out visitor. Hidden again by app.js the moment login succeeds. -->
+            <section id="login-section" class="card" hidden>
+                <h2>Log in</h2>
+                <p class="hint">Demo accounts: <code>admin / admin123</code> or <code>user / user123</code></p>
+                <form id="login-form">
+                    <label>
+                        Username
+                        <input type="text" name="username" autocomplete="username" required>
+                    </label>
+                    <label>
+                        Password
+                        <input type="password" name="password" autocomplete="current-password" required>
+                    </label>
+                    <button type="submit">Log in</button>
+                </form>
+                <p id="login-error" class="error" hidden></p>
+            </section>
+            <!-- Shown only once we've confirmed a valid session via GET /api/auth/me. -->
+            <section id="app-section" class="card" hidden>
+                <div class="row">
+                    <h2>Welcome, <span id="username-display"></span></h2>
+                    <button id="logout-button">Log out</button>
+                </div>
+                <h3>Upload a file</h3>
+                <form id="upload-form">
+                    <input type="file" name="file" required>
+                    <button type="submit">Upload</button>
+                </form>
+                <p id="upload-error" class="error" hidden></p>
+                <h3>Uploaded files</h3>
+                <ul id="file-list"></ul>
+            </section>
+        </main>
+        <script src="/js/app.js"></script>
+    </body>
+</html>
